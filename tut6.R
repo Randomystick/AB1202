@@ -21,8 +21,7 @@ median(diet2)
 ##################
 
 View(USPersonalExpenditure)
-sum(USPersonalExpenditure) / 5 
-
+sum(USPersonalExpenditure) / 5
 
 class(USPersonalExpenditure)
 # "matrix" "array"
@@ -34,6 +33,8 @@ col(USPersonalExpenditure)
 #[4,]    1    2    3    4    5
 #[5,]    1    2    3    4    5
 sum(USPersonalExpenditure[3,]) / 5
+#or
+mean(USPersonalExpenditure[3,])
 
 ##################
 ###### QN 5 ######
