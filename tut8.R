@@ -42,7 +42,7 @@ print(c(lowerLimit, upperLimit))
 ###### QN 4 ######
 ##################
 
-percent = 0.9+(1-0.9)/2 = 0.95 
+percent = 0.95 
 X10 = ChickWeight$weight[ChickWeight$Time==10] 
 n=length(X10) 
 S=sd(X10) 
@@ -52,7 +52,7 @@ upperLimit = X_bar+qt(percent, n-1)*S/sqrt(n)
 print(c(lowerLimit, upperLimit)) 
 
 
-percent = 0.95+(1-0.95)/2 = 0.975 
+percent = 0.975 
 X0 = ChickWeight$weight[ChickWeight$Time==0] 
 n=length(X0) 
 S=sd(X0) 
@@ -65,8 +65,7 @@ print(c(lowerLimit, upperLimit))
 ###### QN 5 ######
 ##################
 
-pnorm(0.975,0,1)
-40000*(0.8352199)^2
+40000*((qnorm(0.975,0,1)))^2
 
 ##################
 ###### QN 6 ######
