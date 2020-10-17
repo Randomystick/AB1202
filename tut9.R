@@ -51,7 +51,7 @@ Tscore
 2*(1-pt(Tscore,n-1))
 
 
-samplee = c(EuStockMarkets[1:30, "DAX"],EuStockMarkets[361:391, "DAX"])
+samplee = c(EuStockMarkets[1:30, "DAX"],EuStockMarkets[361:390, "DAX"])
 n = length(samplee)
 pop_mean = 1620
 X_bar=mean(samplee)
