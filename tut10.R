@@ -51,6 +51,10 @@ summary(reg.results)
 
 
 #Q9
+class(ChickWeight$Diet)
+class(ChickWeight$Chick)
+class(ChickWeight$Time)
+class(ChickWeight$weight)
 #View(ChickWeight)
 chickweightt = ChickWeight
 chickweightt$diet.factor = factor(ChickWeight$Diet)
@@ -64,5 +68,7 @@ chickweighttt$diet.factor = factor(ChickWeight$Diet)
 chickweighttt$time.factor = factor(ChickWeight$Time)
 reg.results = lm(weight ~ time.factor + diet.factor, data=chickweighttt)
 summary(reg.results)
+#you can modify ChickWeight directly and it will auto-revert back to
+#normal after you close and re-open the program.
 
 
