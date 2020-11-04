@@ -30,16 +30,20 @@ Y
 #Q2-1
 set.seed(200)
 investment = 1000
-for (i in 2:6){
+for (i in 2:6)
+{
     investment = investment * (1+runif(n = 1,min = -3/100,max = 7/100))
 }
 investment
 
+contribution = 1000
+contribution[2:5] = 0
 
 #Q2-2
 set.seed(200)
 investments = 0
-for (i in 1:100){
+for (i in 1:100)
+{
     investment = 1000
     for (j in 2:6){
         investment = investment * (1+runif(n = 1,min = -3/100,max = 7/100))
@@ -52,25 +56,31 @@ mean(investments)
 #Q2-3/4
 set.seed(200)
 investment = 0
-for (i in 1:5){
+for (i in 1:5)
+{
     investment = investment + (1000*i)
     investment = investment * (1+runif(n = 1,min = -3/100,max = 7/100))
 }
 investment
 
+
 #Q2-5
 set.seed(200)
 investmentVector = 0
 ntucVoucherVector = 0
-for (j in 1:100){
+for (j in 1:100)
+{
     investment = 0
     ntucVoucher = 0
-    for (i in 1:5){
+    for (i in 1:5)
+    {
         investment = investment + 1000
         dividend = investment*runif(n = 1,min = -3/100,max = 7/100)
-        if (dividend > 0){
+        if (dividend > 0)
+        {
             ntucVoucher = ntucVoucher + dividend
-        } else {
+        } else 
+        {
             investment = investment + dividend
         }
     }
@@ -95,16 +105,25 @@ set.seed(200)
 unsoldJuiceVector = 0
 for (i in 1:1000){
     sell = sum(runif(n = 10,min = 3,max = 5))
-    unsoldJuiceVector[i] = 50 - sell
+    if (sell<=50)
+    {
+        unsoldJuiceVector[i] = 50 - sell
+    } else
+    {
+        unsoldJuiceVector[i] = 0
+    }
+    
 }
 mean(unsoldJuiceVector)
 
 #Q3-2
 set.seed(200)
 stockout = 0
-for (i in 1:100){
+for (i in 1:100)
+{
     sell = sum(rnorm(n = 10,mean = 4.5,sd = 1.5))
-    if (sell > 50){
+    if (sell > 50)
+    {
         stockout = stockout + 1
     }
 }
