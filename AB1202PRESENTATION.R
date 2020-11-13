@@ -12,13 +12,13 @@ data$probabilities = data$number/37
 MEANchocoCone = sum(
     data$probabilities[data$flavour=="chocolate" & data$medium=="cone"] 
     *
-    data$price[data$flavour=="chocolate" & data$medium=="cone"]
-    )
+        data$price[data$flavour=="chocolate" & data$medium=="cone"]
+)
 
 VARchocoCone = sum(
     data$probabilities[data$flavour=="chocolate" & data$medium=="cone"] 
     *
-    (data$price[data$flavour=="chocolate" & data$medium=="cone"]-MEANchocoCone)^2
+        (data$price[data$flavour=="chocolate" & data$medium=="cone"]-MEANchocoCone)^2
 )
 
 # VANILLA, CONE
@@ -26,13 +26,13 @@ VARchocoCone = sum(
 MEANvanillaCone = sum(
     data$probabilities[data$flavour=="vanilla" & data$medium=="cone"] 
     *
-    data$price[data$flavour=="vanilla" & data$medium=="cone"]
+        data$price[data$flavour=="vanilla" & data$medium=="cone"]
 )
 
 VARvanillaCone = sum(
     data$probabilities[data$flavour=="vanilla" & data$medium=="cone"] 
     *
-    (data$price[data$flavour=="vanilla" & data$medium=="cone"]-MEANvanillaCone)^2
+        (data$price[data$flavour=="vanilla" & data$medium=="cone"]-MEANvanillaCone)^2
 )
 
 #################################################################
@@ -67,17 +67,20 @@ c(lowerLimitVanil, upperLimitVanil)
 
 data2 = read.csv(file = "C:\\Users\\bryan\\Downloads\\AB1202DATA.csv", header = T)
 
+data2$flavour.factor = factor(data2$flavour)
+data2$medium.factor = factor(data2$medium)
+
 for (j in 0:3)
 {
     for (i in (15+16*j):(1+16*j))
     {
-        data2$number[data2$X==i] = data2$number[data2$X==i] + data2$number[data2$X==i+1]
+        data2$number[data2$X==i] = 
+            (
+                data2$number[data2$X==i]
+                + 
+                data2$number[data2$X==i+1]
+            )
     }
 }
 
-data2$flavour.factor = factor(data2$flavour)
-data2$medium.factor = factor(data2$medium)
 summary(lm(number ~ medium.factor + flavour.factor + price, data=data2))
-
-
-
