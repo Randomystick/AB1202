@@ -75,5 +75,5 @@ Tscore
 2*pt(Tscore, n-1)
 
 lowerLimit = X_bar-qt(.975, n-1)*(sample_sd/sqrt(n))
-upperLimit = X_bar+qt(.975, n-2)*(sample_sd/sqrt(n))
+upperLimit = X_bar+qt(.975, n-1)*(sample_sd/sqrt(n))
 c(lowerLimit, upperLimit)
