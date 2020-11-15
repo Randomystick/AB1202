@@ -1,8 +1,10 @@
 #Q1-1
 x = c(3,-1,5,-2,7,-2,-2,5,10) 
-if (mean(x) > 0) { 
+if (mean(x) > 0) 
+{
     print("the sample mean is positive") 
-} else { 
+} else 
+{ 
     print("the sample mean is non positive") 
 }
 
@@ -10,9 +12,11 @@ if (mean(x) > 0) {
 #Q1-2
 y = runif(n = 1,min = -0.1,max = 1)
 y
-if (x > 0) {
+if (y > 0) 
+{
     print("the sample mean is positive")
-} else {
+} else 
+{
     print("the sample mean is non positive")
 }
 
@@ -39,6 +43,18 @@ investment
 contribution = 1000
 contribution[2:5] = 0
 
+#############################################
+set.seed(200)
+value = rep(0,6)
+contribution = c(1000,rep(0,5))
+for (i in 1:5)
+{
+    return = runif(n = 1,min = -0.03,max = 0.07)
+    value[i+1] = (value[i]+contribution[i])*(1+return)
+}
+value[6]
+
+
 #Q2-2
 set.seed(200)
 investments = 0
@@ -51,6 +67,22 @@ for (i in 1:100)
     investments[i] = investment
 }
 mean(investments)
+
+#############################################
+set.seed(200)
+investmentVector = rep(0,100)
+for (j in 1:100)
+{
+    value = rep(0,6)
+    contribution = c(1000,rep(0,5))
+    for (i in 1:5)
+    {
+        return = runif(n = 1,min = -0.03,max = 0.07)
+        value[i+1] = (value[i]+contribution[i])*(1+return)
+    }
+    investmentVector[j] = value[6]
+}
+mean(investmentVector)
 
 
 #Q2-3/4

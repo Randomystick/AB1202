@@ -1,3 +1,8 @@
+library(wooldridge)
+library(e1071)
+
+########################################
+
 # HYPO TESTING
 # POP SD IS KNOWN
 pop_mean = 24 #in H0 
@@ -38,3 +43,12 @@ Tscore
 lowerLimit = X_bar-qt(.975, n-1)*(sample_sd/sqrt(n))
 upperLimit = X_bar+qt(.975, n-1)*(sample_sd/sqrt(n))
 c(lowerLimit, upperLimit)
+
+########################################
+########################################
+########################################
+
+dataset = apple
+summary( lm(ecolbs ~ ecoprc + regprc, data=dataset) )
+#factor(), log()
+
